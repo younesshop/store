@@ -1,0 +1,119 @@
+!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>متجري الإلكتروني</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f4f4;
+}
+header{
+  background:#111;
+  color:white;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+header h1{margin:0;}
+nav a{
+  color:white;
+  margin-left:15px;
+  text-decoration:none;
+  font-weight:bold;
+}
+.hero{
+  background:linear-gradient(120deg,#000,#444);
+  color:white;
+  text-align:center;
+  padding:80px 20px;
+}
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:40px;
+}
+.card{
+  background:white;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  padding:20px;
+  text-align:center;
+}
+.card img{
+  width:100%;
+  border-radius:10px;
+}
+.card button{
+  background:#111;
+  color:white;
+  border:none;
+  padding:10px;
+  width:100%;
+  border-radius:8px;
+  cursor:pointer;
+}
+footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+.lang{
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1 id="title">متجري</h1>
+<nav>
+<a href="#" id="home">الرئيسية</a>
+<a href="#products" id="prod">المنتجات</a>
+<span class="lang" onclick="toggleLang()">🌐 EN</span>
+</nav>
+</header>
+
+<section class="hero">
+<h2 id="heroTitle">أفضل المنتجات بأفضل الأسعار</h2>
+<p id="heroText">تجربة تسوق احترافية وسهلة</p>
+</section>
+
+<section id="products" class="products">
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3 id="p1">منتج 1</h3>
+<p>99$</p>
+<button id="buy">أضف إلى السلة</button>
+</div>
+</section>
+
+<footer>
+<p>© 2026 متجري الإلكتروني</p>
+</footer>
+
+<script>
+let ar=true;
+function toggleLang(){
+ar=!ar;
+document.documentElement.lang=ar?'ar':'en';
+document.documentElement.dir=ar?'rtl':'ltr';
+title.innerText=ar?'متجري':'My Store';
+home.innerText=ar?'الرئيسية':'Home';
+prod.innerText=ar?'المنتجات':'Products';
+heroTitle.innerText=ar?'أفضل المنتجات بأفضل الأسعار':'Best products at best prices';
+heroText.innerText=ar?'تجربة تسوق احترافية وسهلة':'A smooth professional shopping experience';
+p1.innerText=ar?'منتج 1':'Product 1';
+buy.innerText=ar?'أضف إلى السلة':'Add to cart';
+}
+</script>
+
+</body>
+</html>
